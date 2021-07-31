@@ -26,6 +26,7 @@ pipeline{
         }
         stage('checking cdk'){
             steps{
+
                 sh 'cdk --version'
                 echo 'everything is working fine'
                 echo 'synth cdk !'
@@ -35,8 +36,12 @@ pipeline{
         }
         stage('cdk Deploy'){
             steps{
+withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding',credentialsId: "DevXInternalDeployment"]]){
                 echo 'creating stack'
                 sh 'cdk deploy'
+
+            }                
+
             }
         }
 
