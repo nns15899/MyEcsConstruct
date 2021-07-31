@@ -34,7 +34,7 @@ pipeline{
             }
         }
         stage('cdk Deploy'){
-            stages{
+            steps{
                 echo 'creating stack'
                 sh 'cdk -y deploy'
             }
