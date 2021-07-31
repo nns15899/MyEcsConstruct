@@ -24,6 +24,12 @@ pipeline{
                 sh 'cdk --version'
             }
         }
+        stage('checking cdk'){
+            steps{
+                sh 'cdk --version'
+                echo 'everything is working fine'
+            }
+        }
 
     }
 }
