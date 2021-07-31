@@ -15,6 +15,7 @@ pipeline{
         }
         stage('Installing aws cli on Docker'){
             steps{
+                sh 'apt-get install npm'
                 sh 'npm install -g aws-cdk'
                 echo 'now installing cdk'
 
