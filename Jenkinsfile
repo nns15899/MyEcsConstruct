@@ -1,9 +1,12 @@
 pipeline{
-    agent any
+agent {
+    label "ec2-general-worker-node"
+}
     tools{
         jdk 'java'
         maven 'maven'
         dockerTool 'myDocker'
+        node 'myNode'
     }
     stages{
         stage('checkout'){
