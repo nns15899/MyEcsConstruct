@@ -33,6 +33,12 @@ pipeline{
                 echo 'cloudformation template generated !'
             }
         }
+        stage('cdk Deploy'){
+            stages{
+                echo 'creating stack'
+                sh 'cdk -y deploy'
+            }
+        }
 
 
     }
