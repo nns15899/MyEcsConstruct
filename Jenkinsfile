@@ -38,7 +38,7 @@ pipeline{
             steps{
 withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding',credentialsId: "DevXInternalDeployment"]]){
                 echo 'creating stack'
-                sh 'cdk deploy'
+                sh 'cdk deploy --require-approval never'
 
             }                
 
