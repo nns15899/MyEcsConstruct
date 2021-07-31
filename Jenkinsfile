@@ -17,7 +17,11 @@ pipeline{
         }
         stage('install dependencies') { 
             steps {
-                sh 'npm -v' 
+                sh 'npm -v'
+                echo 'npm installed !'
+                echo 'installing cdk'
+                sh 'npm install -g aws-cdk'
+                sh 'cdk --version'
             }
         }
 
