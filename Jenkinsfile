@@ -5,7 +5,7 @@ pipeline{
         jdk 'java'
         maven 'maven'
         dockerTool 'myDocker'
-        nodejs 'node'
+        nodejs 'NodeJS'
         
     }
     stages{
