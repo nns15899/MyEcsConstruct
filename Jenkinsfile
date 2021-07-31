@@ -4,12 +4,12 @@ pipeline{
             image 'node:lts-buster-slim'              
         }
     }
-    // tools{
-    //     jdk 'java'
-    //     maven 'maven'
-    //     dockerTool 'myDocker'
-    //     node 'myNode'
-    // }
+    tools{
+        jdk 'java'
+        maven 'maven'
+        dockerTool 'myDocker'
+        
+    }
     stages{
         stage('Build') { 
             steps {
