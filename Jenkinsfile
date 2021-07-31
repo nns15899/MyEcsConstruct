@@ -28,8 +28,12 @@ pipeline{
             steps{
                 sh 'cdk --version'
                 echo 'everything is working fine'
+                echo 'synth cdk !'
+                sh 'cdk synth'
+                echo 'cloudformation template generated !'
             }
         }
+
 
     }
 }
