@@ -44,6 +44,16 @@ withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding',credentialsId: 
 
             }
         }
+        stage('cdk Destroy'){
+            steps{
+withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding',credentialsId: "DevXInternalDeployment"]]){
+                echo 'creating stack'
+                sh 'cdk destroy --require-approval never'
+
+            }                
+
+            }
+        }
 
 
     }
